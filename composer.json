@@ -1,0 +1,32 @@
+{
+  "name": "pleinx/php-multilang-any",
+  "type": "library",
+  "description": "A internationalization (i18n) Tool written in PHP | Redundant Resources loading | Adapter for e.g. Slim, Wordpress,...",
+  "keywords": [
+    "php",
+    "i18n",
+    "translation",
+    "translator",
+    "api",
+    "translator-tool",
+    "slim-framework",
+    "wordpress"
+  ],
+  "homepage": "http://pleinx.de/git/php-i18n/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabian Hesse",
+      "email": "pleinx0@gmail.com",
+      "homepage": "http://pleinx.de/git/php-i18n/"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "TranslatorAPI\\": "./src"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "SearchedFor": "Your search results for: \"{{searchTerm}}\" in the category \"{{categoryName}}\".",
+  "SearchResult": "Found {{itemsCount}} from {{itemsTotal}}. Displayed items {{itemsCount}}."
+}

@@ -1,0 +1,4 @@
+{
+  "Hello": "Hallo {{name}} {{name}} {{name}}",
+  "TestFallback": "Yes, works"
+}

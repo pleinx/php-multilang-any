@@ -1,0 +1,4 @@
+{
+  "SayHelloTo": "Hello {{name}}!",
+  "ViewProduct": "Show {{productName}} now"
+}

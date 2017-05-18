@@ -1,0 +1,4 @@
+{
+  "SearchedFor": "Sie suchten nach: \"{{searchTerm}}\" in der Kategorie \"{{categoryName}}\".",
+  "SearchResult": "{{itemsCount}} gefunden von insgesamt {{itemsTotal}}. {{itemsCount}} werden aktuell angezeigt."
+}
