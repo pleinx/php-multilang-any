@@ -39,17 +39,18 @@
     }
 
     // As returned value
-    $sayHelloMessage = __('pkg_general.SayHelloTo', 'Sandra');
-    echo $sayHelloMessage;
+    $storeMessageSayHelloMessage = __('pkg_general.SayHelloTo', 'Sandra');
+
 
     // Direct echo
     __e('pkg_general.SayHelloTo', 'Sandra');
+    // Output in German: "Hallo Sandra!" and in english: "Hello Sandra"
 
 
     // ========================= Usage with multiply arguments =========================
-
     TranslateMe::__e('pkg_search.SearchedFor', ['RC Car', 'Toys']);
+    // Output in English: Your search results for: "RC Car" in the category "Toys"
 
     // or if you using one argument multiply in the message
     TranslateMe::__e('pkg_search.SearchResult', ['itemCount' => 5, 'itemCountTotal' => 10]);
-
+    // Output in English: Found 5 from 10. Displayed items 5.
