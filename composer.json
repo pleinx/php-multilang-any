@@ -12,13 +12,13 @@
     "slim-framework",
     "wordpress"
   ],
-  "homepage": "http://pleinx.de/git/php-i18n/",
+  "homepage": "https://github.com/pleinx/php-multilang-any",
   "license": "MIT",
   "authors": [
     {
       "name": "Fabian Hesse",
       "email": "pleinx0@gmail.com",
-      "homepage": "http://pleinx.de/git/php-i18n/"
+      "homepage": "https://github.com/pleinx/php-multilang-any"
     }
   ],
   "require": {
