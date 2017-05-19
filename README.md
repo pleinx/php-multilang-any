@@ -1,8 +1,8 @@
 #### fyi: Currently not complete documented :-) Working on it...
 
-# php-multilang-any
+#### Description
 
-A simple library to handle translations (i18n) in your Project.
+An PHP-library to handle translations (i18n) in your Project.
  
 #### Basic Features
 
@@ -23,7 +23,7 @@ Translate::__e('Foo', ['Bar']);
 // Output "Foo is nicer than Bar"
 ```
 
-### Configure
+## Configure
 
 ```ini
 $translatorConfig = (new TranslatorSettings())
@@ -34,6 +34,16 @@ $translatorConfig = (new TranslatorSettings())
     ->addData('customVar', 'customValue');
 
 new TranslatorAPI($translatorConfig);
+```
+
+#### Language Resource Example (JSON) 
+```ini
+// package_serach.json
+{
+    "results.success.text": "Your search Results for {{searchTerm}}.",
+    "results.failed.text": "Nothing found for {{searchTerm}}",
+    "results.success.itemsInCategories": "Found {{itemsCount}} in {{categories}}"
+}
 ```
 
 #### Requirements
