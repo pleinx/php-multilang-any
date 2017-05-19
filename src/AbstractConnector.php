@@ -1,31 +1,31 @@
 <?php
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
-    use TranslatorAPI\Interfaces\ConnectorInterface;
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
+    use MultilangAny\Interfaces\ConnectorInterface;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class AbstractConnector
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
     class AbstractConnector implements ConnectorInterface {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
 
         /**
          * AbstractConnector constructor.
          *
-         * @param TranslatorConfig|null $config
+         * @param TranslatorSettings|null $config
          */
-        public function __construct (TranslatorConfig $config = null) {
-            $this->config = ($config) ?: new TranslatorConfig();
+        public function __construct (TranslatorSettings $config = null) {
+            $this->config = ($config) ?: new TranslatorSettings();
         }
 
         /**
@@ -43,7 +43,7 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         function getConfig () {
             return $this->config;

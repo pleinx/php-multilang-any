@@ -1,16 +1,16 @@
 <?php
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
 
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
-    use TranslatorAPI\Models\JsonResource;
+    use MultilangAny\Settings AS TranslatorSettings;
+    use MultilangAny\Models\JsonResource;
 
     /**
      * Class ResourceResolver
      * Loads the requested Language-Resources (current Language+Fallback) by PackageName
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
@@ -21,18 +21,18 @@
          */
         private $resources;
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
 
         /**
          * ResourceResolver constructor.
          *
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          *
          * @throws \Exception
          */
-        public function __construct (TranslatorConfig $config) {
+        public function __construct (TranslatorSettings $config) {
             $this->config = $config;
 
             if (!is_dir($this->getPath())) {
@@ -113,7 +113,7 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         public function getConfig () {
             return $this->config;

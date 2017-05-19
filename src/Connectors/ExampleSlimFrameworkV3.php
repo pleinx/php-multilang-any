@@ -1,13 +1,13 @@
 <?php
 
-    namespace TranslatorAPI\Connectors;
+    namespace MultilangAny\Connectors;
 
-    use TranslatorAPI\AbstractConnector;
+    use MultilangAny\AbstractConnector;
 
     /**
      * Class ExampleSlimFrameworkV3
      *
-     * @package TranslatorAPI\Connectors
+     * @package MultilangAny\Connectors
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

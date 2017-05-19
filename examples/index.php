@@ -1,14 +1,17 @@
 <?php
     /**
-     * Notice: You dont need forcing a TranslatorConfig or the Static Translate (aka. TranslateMe) Class.
+     * Notice: You dont need forcing a TranslatorSettings or the Static Translate (aka. TranslateMe) Class.
      * You can also use the Default Path (Check your Config)
      * Its just a Example how to use the Translator.
      */
 
     // ========================= Initialize the Translator =========================
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
-    use TranslatorAPI\Translator;
-    use TranslatorAPI\Translate AS TranslateMe;
+    use MultilangAny\Settings AS TranslatorConfig;
+    use MultilangAny\TranslatorAPI;
+
+    // Give a custom alias, what you want
+    // e.g. T = T::__(foo, bar)
+    use MultilangAny\Translate AS TranslateMe;
 
     require '../vendor/autoload.php';
 
@@ -16,7 +19,7 @@
         ->setIsProduction(false)
         ->setLanguageFilesPath(__DIR__ . '/lang');
 
-    $translator = new Translator($translatorConfig);
+    $translator = new TranslatorAPI($translatorConfig);
 
 
     // ========================= Usage via Dependendcy Injection =========================

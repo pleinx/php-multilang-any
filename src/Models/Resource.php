@@ -1,8 +1,8 @@
 <?php
 
-    namespace TranslatorAPI\Models;
+    namespace MultilangAny\Models;
 
-    use TranslatorAPI\Interfaces\ResourceInterface;
+    use MultilangAny\Interfaces\ResourceInterface;
 
     /**
      * Class Resource
@@ -11,12 +11,7 @@
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
-    class Resource implements ResourceInterface {
-
-        /**
-         * @var array
-         */
-        protected $data;
+    class Resource extends Data implements ResourceInterface {
 
         /**
          * Resource constructor.
@@ -24,14 +19,7 @@
          * @param array $input
          */
         public function __construct (Array $input) {
-            $this->data = $input;
-        }
-
-        /**
-         * @return bool
-         */
-        function hasData () {
-            return (count($this->data) > 0);
+            $this->setData($input);
         }
 
         /**
@@ -40,6 +28,6 @@
          * @return string
          */
         function getMessageByKey ($key) {
-            return (isset($this->data[$key])) ? $this->data[$key] : '';
+            return $this->getItem($key);
         }
     }

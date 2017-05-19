@@ -1,24 +1,24 @@
 <?php
 
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
 
-    use TranslatorAPI\Interfaces\MessageResolverInterface;
-    use TranslatorAPI\Interfaces\ResourceInterface;
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
+    use MultilangAny\Interfaces\MessageResolverInterface;
+    use MultilangAny\Interfaces\ResourceInterface;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class MessageResolver
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
     class MessageResolver implements MessageResolverInterface {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
         /**
@@ -29,10 +29,10 @@
         /**
          * MessageResolver constructor.
          *
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          * @param ResourceResolver $resourceResolver
          */
-        public function __construct (TranslatorConfig $config, ResourceResolver $resourceResolver) {
+        public function __construct (TranslatorSettings $config, ResourceResolver $resourceResolver) {
             $this->config = $config;
             $this->resourceResolver = $resourceResolver;
         }
@@ -71,8 +71,8 @@
         private function __buildMessageWithArguments ($key, $args, ResourceInterface $resource) {
             $msg = $resource->getMessageByKey($key);
 
-            if (empty($msg)) {
-                return $msg;
+            if ($msg === null) {
+                return '';
             }
 
             if (empty($args)) {

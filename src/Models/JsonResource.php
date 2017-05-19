@@ -1,11 +1,11 @@
 <?php
 
-    namespace TranslatorAPI\Models;
+    namespace MultilangAny\Models;
 
     /**
      * Class JsonResource
      *
-     * @package Translator
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

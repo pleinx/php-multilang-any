@@ -1,21 +1,21 @@
 <?php
 
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class Translator
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
-    class Translator {
+    class TranslatorAPI {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
         /**
@@ -30,12 +30,12 @@
         /**
          * Translator constructor.
          *
-         * @param TranslatorConfig|null $config
+         * @param TranslatorSettings|null $config
          * @param AbstractConnector|null $connector
          */
-        public function __construct (TranslatorConfig $config = null, AbstractConnector $connector = null) {
+        public function __construct (TranslatorSettings $config = null, AbstractConnector $connector = null) {
             // Basic Initialize
-            $this->setConfig(($config) ?: new TranslatorConfig());
+            $this->setConfig(($config) ?: new TranslatorSettings());
             $this->setConnector($connector);
 
             // Find the current Language
@@ -49,18 +49,18 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         public function getConfig () {
             return $this->config;
         }
 
         /**
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          *
-         * @return Translator
+         * @return TranslatorAPI
          */
-        private function setConfig (TranslatorConfig $config) {
+        private function setConfig (TranslatorSettings $config) {
             $this->config = $config;
 
             return $this;
@@ -94,7 +94,7 @@
         /**
          * @param MessageResolver $messageResolver
          *
-         * @return Translator
+         * @return TranslatorAPI
          */
         private function setMessageResolver ($messageResolver) {
             $this->messageResolver = $messageResolver;
