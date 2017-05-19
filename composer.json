@@ -1,7 +1,7 @@
 {
   "name": "pleinx/php-multilang-any",
   "type": "library",
-  "description": "A internationalization (i18n) Tool written in PHP | Redundant Resources loading | Adapter for e.g. Slim, Wordpress,...",
+  "description": "An PHP-library to handle translations (i18n) in your Project.",
   "keywords": [
     "php",
     "i18n",
