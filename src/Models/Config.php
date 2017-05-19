@@ -1,13 +1,13 @@
 <?php
 
-    namespace TranslatorAPI\Models;
+    namespace MultilangAny\Models;
 
-    use TranslatorAPI\Container;
+    use MultilangAny\Container;
 
     /**
      * Class Config
      *
-     * @package TranslatorAPI\Models
+     * @package MultilangAny\Models
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

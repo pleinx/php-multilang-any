@@ -1,17 +1,17 @@
 <?php
 
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
 
-    use TranslatorAPI\Interfaces\MessageResolverInterface;
-    use TranslatorAPI\Interfaces\ResourceInterface;
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
+    use MultilangAny\Interfaces\MessageResolverInterface;
+    use MultilangAny\Interfaces\ResourceInterface;
+    use MultilangAny\Models\Config AS TranslatorConfig;
 
     /**
      * Class MessageResolver
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

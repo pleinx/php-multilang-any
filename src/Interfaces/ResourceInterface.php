@@ -1,12 +1,12 @@
 <?php
 
-    namespace TranslatorAPI\Interfaces;
+    namespace MultilangAny\Interfaces;
 
 
     /**
      * Interface ResourceInterface
      *
-     * @package TranslatorAPI\Interfaces
+     * @package MultilangAny\Interfaces
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

@@ -1,12 +1,12 @@
 <?php
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
 
     /**
      * Class Translate
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

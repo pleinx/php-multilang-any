@@ -1,14 +1,14 @@
 <?php
 
 
-    namespace TranslatorAPI;
+    namespace MultilangAny;
 
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
+    use MultilangAny\Models\Config AS TranslatorConfig;
 
     /**
      * Class Translator
      *
-     * @package TranslatorAPI
+     * @package MultilangAny
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */

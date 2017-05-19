@@ -1,8 +1,8 @@
 <?php
 
-    namespace TranslatorAPI\Models;
+    namespace MultilangAny\Models;
 
-    use TranslatorAPI\Interfaces\ResourceInterface;
+    use MultilangAny\Interfaces\ResourceInterface;
 
     /**
      * Class Resource

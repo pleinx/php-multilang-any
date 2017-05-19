@@ -6,12 +6,12 @@
      */
 
     // ========================= Initialize the Translator =========================
-    use TranslatorAPI\Models\Config AS TranslatorConfig;
-    use TranslatorAPI\Translator;
+    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Translator;
 
     // Give a custom alias, what you want
     // e.g. T = T::__(foo, bar)
-    use TranslatorAPI\Translate AS TranslateMe;
+    use MultilangAny\Translate AS TranslateMe;
 
     require '../vendor/autoload.php';
 
