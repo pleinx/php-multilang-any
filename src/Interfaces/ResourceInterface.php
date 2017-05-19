@@ -11,12 +11,6 @@
      * Visit me on : https://github.com/pleinx
      */
     interface ResourceInterface {
-
-        /**
-         * @return bool
-         */
-        function hasData ();
-
         /**
          * @param $key
          *
