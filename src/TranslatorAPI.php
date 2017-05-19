@@ -12,7 +12,7 @@
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
-    class Translator {
+    class TranslatorAPI {
 
         /**
          * @var TranslatorConfig
@@ -58,7 +58,7 @@
         /**
          * @param TranslatorConfig $config
          *
-         * @return Translator
+         * @return TranslatorAPI
          */
         private function setConfig (TranslatorConfig $config) {
             $this->config = $config;
@@ -94,7 +94,7 @@
         /**
          * @param MessageResolver $messageResolver
          *
-         * @return Translator
+         * @return TranslatorAPI
          */
         private function setMessageResolver ($messageResolver) {
             $this->messageResolver = $messageResolver;

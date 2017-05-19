@@ -7,7 +7,7 @@
 
     // ========================= Initialize the Translator =========================
     use MultilangAny\Models\Config AS TranslatorConfig;
-    use MultilangAny\Translator;
+    use MultilangAny\TranslatorAPI;
 
     // Give a custom alias, what you want
     // e.g. T = T::__(foo, bar)
@@ -19,7 +19,7 @@
         ->setIsProduction(false)
         ->setLanguageFilesPath(__DIR__ . '/lang');
 
-    $translator = new Translator($translatorConfig);
+    $translator = new TranslatorAPI($translatorConfig);
 
 
     // ========================= Usage via Dependendcy Injection =========================
