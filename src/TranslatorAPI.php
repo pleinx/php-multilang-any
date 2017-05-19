@@ -3,7 +3,7 @@
 
     namespace MultilangAny;
 
-    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class Translator
@@ -15,7 +15,7 @@
     class TranslatorAPI {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
         /**
@@ -30,12 +30,12 @@
         /**
          * Translator constructor.
          *
-         * @param TranslatorConfig|null $config
+         * @param TranslatorSettings|null $config
          * @param AbstractConnector|null $connector
          */
-        public function __construct (TranslatorConfig $config = null, AbstractConnector $connector = null) {
+        public function __construct (TranslatorSettings $config = null, AbstractConnector $connector = null) {
             // Basic Initialize
-            $this->setConfig(($config) ?: new TranslatorConfig());
+            $this->setConfig(($config) ?: new TranslatorSettings());
             $this->setConnector($connector);
 
             // Find the current Language
@@ -49,18 +49,18 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         public function getConfig () {
             return $this->config;
         }
 
         /**
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          *
          * @return TranslatorAPI
          */
-        private function setConfig (TranslatorConfig $config) {
+        private function setConfig (TranslatorSettings $config) {
             $this->config = $config;
 
             return $this;

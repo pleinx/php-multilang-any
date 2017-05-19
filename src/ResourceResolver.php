@@ -3,7 +3,7 @@
     namespace MultilangAny;
 
 
-    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
     use MultilangAny\Models\JsonResource;
 
     /**
@@ -21,18 +21,18 @@
          */
         private $resources;
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
 
         /**
          * ResourceResolver constructor.
          *
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          *
          * @throws \Exception
          */
-        public function __construct (TranslatorConfig $config) {
+        public function __construct (TranslatorSettings $config) {
             $this->config = $config;
 
             if (!is_dir($this->getPath())) {
@@ -113,7 +113,7 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         public function getConfig () {
             return $this->config;

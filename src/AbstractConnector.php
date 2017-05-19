@@ -3,7 +3,7 @@
     namespace MultilangAny;
 
     use MultilangAny\Interfaces\ConnectorInterface;
-    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class AbstractConnector
@@ -15,17 +15,17 @@
     class AbstractConnector implements ConnectorInterface {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
 
         /**
          * AbstractConnector constructor.
          *
-         * @param TranslatorConfig|null $config
+         * @param TranslatorSettings|null $config
          */
-        public function __construct (TranslatorConfig $config = null) {
-            $this->config = ($config) ?: new TranslatorConfig();
+        public function __construct (TranslatorSettings $config = null) {
+            $this->config = ($config) ?: new TranslatorSettings();
         }
 
         /**
@@ -43,7 +43,7 @@
         }
 
         /**
-         * @return TranslatorConfig
+         * @return TranslatorSettings
          */
         function getConfig () {
             return $this->config;

@@ -1,12 +1,12 @@
 <?php
     /**
-     * Notice: You dont need forcing a TranslatorConfig or the Static Translate (aka. TranslateMe) Class.
+     * Notice: You dont need forcing a TranslatorSettings or the Static Translate (aka. TranslateMe) Class.
      * You can also use the Default Path (Check your Config)
      * Its just a Example how to use the Translator.
      */
 
     // ========================= Initialize the Translator =========================
-    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorConfig;
     use MultilangAny\TranslatorAPI;
 
     // Give a custom alias, what you want

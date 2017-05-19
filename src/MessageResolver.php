@@ -6,7 +6,7 @@
 
     use MultilangAny\Interfaces\MessageResolverInterface;
     use MultilangAny\Interfaces\ResourceInterface;
-    use MultilangAny\Models\Config AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
 
     /**
      * Class MessageResolver
@@ -18,7 +18,7 @@
     class MessageResolver implements MessageResolverInterface {
 
         /**
-         * @var TranslatorConfig
+         * @var TranslatorSettings
          */
         private $config;
         /**
@@ -29,10 +29,10 @@
         /**
          * MessageResolver constructor.
          *
-         * @param TranslatorConfig $config
+         * @param TranslatorSettings $config
          * @param ResourceResolver $resourceResolver
          */
-        public function __construct (TranslatorConfig $config, ResourceResolver $resourceResolver) {
+        public function __construct (TranslatorSettings $config, ResourceResolver $resourceResolver) {
             $this->config = $config;
             $this->resourceResolver = $resourceResolver;
         }

@@ -1,17 +1,15 @@
 <?php
 
-    namespace MultilangAny\Models;
-
-    use MultilangAny\Container;
+    namespace MultilangAny;
 
     /**
-     * Class Config
+     * Class Settings
      *
      * @package MultilangAny\Models
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
-    class Config {
+    class Settings {
 
         /**
          * @var bool
@@ -50,7 +48,7 @@
         /**
          * @param bool $production
          *
-         * @return Config
+         * @return Settings
          */
         public function setIsProduction ($production) {
             $this->production = $production;
@@ -68,7 +66,7 @@
         /**
          * @param string $language
          *
-         * @return Config
+         * @return Settings
          */
         public function setLanguage ($language) {
             $this->language = trim($language);
@@ -86,7 +84,7 @@
         /**
          * @param string $fallbackLanguage
          *
-         * @return Config
+         * @return Settings
          */
         public function setFallbackLanguage ($fallbackLanguage) {
             $this->fallbackLanguage = trim($fallbackLanguage);
@@ -104,7 +102,7 @@
         /**
          * @param string $languageFilesPath
          *
-         * @return Config
+         * @return Settings
          */
         public function setLanguageFilesPath ($languageFilesPath) {
             $this->languageFilesPath = $languageFilesPath;
