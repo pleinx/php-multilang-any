@@ -15,7 +15,7 @@ A simple library to handle translations (i18n) in your Project.
 #### Translator Features
 
 * Write your [own Translate](https://github.com/pleinx/php-multilang-any/wiki) Function like `__('foo', ['bar'])`
-* Support HTML-Markup in Translation
+* Supports HTML-Markup in Translation
 
 ## Basic Usage 
 ```ini
