@@ -2,6 +2,8 @@
 
     namespace MultilangAny;
 
+    use MultilangAny\Models\Data;
+
     /**
      * Class Settings
      *
@@ -9,7 +11,7 @@
      * @author Fabian Hesse <pleinx0@gmail.com>
      * Visit me on : https://github.com/pleinx
      */
-    class Settings {
+    class Settings extends Data {
 
         /**
          * @var bool

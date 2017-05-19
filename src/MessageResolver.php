@@ -71,8 +71,8 @@
         private function __buildMessageWithArguments ($key, $args, ResourceInterface $resource) {
             $msg = $resource->getMessageByKey($key);
 
-            if (empty($msg)) {
-                return $msg;
+            if ($msg === null) {
+                return '';
             }
 
             if (empty($args)) {
