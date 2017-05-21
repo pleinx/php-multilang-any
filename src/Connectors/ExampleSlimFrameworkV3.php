@@ -5,7 +5,7 @@
     use MultilangAny\AbstractConnector;
 
     /**
-     * Class ExampleSlimFrameworkV3
+     * This is just an Example of Connector how you can integrate Mutlilang-Any in SlimV3
      *
      * @package MultilangAny\Connectors
      * @author Fabian Hesse <pleinx0@gmail.com>
@@ -34,6 +34,10 @@
          * @return string
          */
         static function makeLink ($url) {
-            return self::$baseURL . self::getLanguage() . '/' . rtrim(ltrim($url, '/'), '/') . '/';
+            $baseUrlWithLanguage = self::$baseURL . self::getLanguage();
+            $parsedUrl = parse_url($baseUrlWithLanguage . '/' . ltrim($url, '/'));
+            $url = rtrim($parsedUrl['path'], '/') . '/' . (!empty($parsedUrl['query']) ? '?' . $parsedUrl['query'] : '');
+
+            return $url;
         }
     }
