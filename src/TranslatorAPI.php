@@ -36,10 +36,12 @@
         public function __construct (TranslatorSettings $config = null, AbstractConnector $connector = null) {
             // Basic Initialize
             $this->setConfig(($config) ?: new TranslatorSettings());
-            $this->setConnector($connector);
 
             // Find the current Language
             $this->getConfig()->setLanguage($this->getLanguageByContext());
+
+            // Set User Connector
+            $this->setConnector($connector);
 
             // Add the MessageResolver
             $this->setMessageResolver(new MessageResolver($this->getConfig(), new ResourceResolver($this->getConfig())));
