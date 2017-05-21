@@ -17,35 +17,33 @@
         /**
          * @var TranslatorSettings
          */
-        private $settings;
+        private static $settings;
 
         /**
-         * AbstractConnector constructor.
-         *
-         * @param TranslatorSettings|null $settings
+         * @return string
          */
-        public function __construct (TranslatorSettings $settings = null) {
-            $this->settings = ($settings) ?: new TranslatorSettings();
+        static function getLanguage () {
+            return self::getSettings()->getLanguage();
         }
 
         /**
          * @return string
          */
-        function getLanguage () {
-            return $this->getSettings()->getLanguage();
-        }
-
-        /**
-         * @return string
-         */
-        function getFallbackLanguage () {
-            return $this->getSettings()->getFallbackLanguage();
+        static function getFallbackLanguage () {
+            return self::getSettings()->getFallbackLanguage();
         }
 
         /**
          * @return TranslatorSettings
          */
-        function getSettings () {
-            return $this->settings;
+        static function getSettings () {
+            return self::$settings;
+        }
+
+        /**
+         * @param Settings $settings
+         */
+        function addSettings (Settings $settings) {
+            self::$settings = $settings;
         }
     }

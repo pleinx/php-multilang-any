@@ -21,7 +21,6 @@
 
     $translator = new TranslatorAPI($translatorConfig);
 
-
     // ========================= Usage via Dependendcy Injection =========================
     echo $translator->translate('pkg_general.SayHelloTo', 'Tim');
     // Output in German: "Hallo Tim!" and in english: "Hello Tim"
