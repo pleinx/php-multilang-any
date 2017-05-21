@@ -3,6 +3,8 @@
 
     namespace MultilangAny\Interfaces;
 
+    use MultilangAny\Settings;
+
     /**
      * Interface ConnectorInterface
      *
@@ -15,10 +17,15 @@
         /**
          * @return string
          */
-        function getLanguage ();
+        static function getLanguage ();
 
         /**
          * @return string
          */
-        function getFallbackLanguage();
+        static function getFallbackLanguage ();
+
+        /**
+         * @param Settings $settings
+         */
+        function addSettings (Settings $settings);
     }

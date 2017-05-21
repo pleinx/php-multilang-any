@@ -17,7 +17,7 @@
         /**
          * @var TranslatorSettings
          */
-        private $config;
+        private $settings;
         /**
          * @var AbstractConnector
          */
@@ -30,21 +30,24 @@
         /**
          * Translator constructor.
          *
-         * @param TranslatorSettings|null $config
+         * @param TranslatorSettings|null $settings
          * @param AbstractConnector|null $connector
          */
-        public function __construct (TranslatorSettings $config = null, AbstractConnector $connector = null) {
+        public function __construct (TranslatorSettings $settings = null, AbstractConnector $connector = null) {
             // Basic Initialize
-            $this->setConfig(($config) ?: new TranslatorSettings());
+            $this->setSettings(($settings) ?: new TranslatorSettings());
 
             // Find the current Language
-            $this->getConfig()->setLanguage($this->getLanguageByContext());
+            $this->getSettings()->setLanguage($this->getLanguageByContext());
 
             // Set User Connector
-            $this->setConnector($connector);
+            if ($connector instanceof AbstractConnector) {
+                $this->setConnector($connector);
+                $this->getConnector()->addSettings($settings);
+            }
 
             // Add the MessageResolver
-            $this->setMessageResolver(new MessageResolver($this->getConfig(), new ResourceResolver($this->getConfig())));
+            $this->setMessageResolver(new MessageResolver($this->getSettings(), new ResourceResolver($this->getSettings())));
 
             // Initialize the Static-Translate Class with our MessageResolver
             new Translate($this->getMessageResolver());
@@ -53,8 +56,8 @@
         /**
          * @return TranslatorSettings
          */
-        public function getConfig () {
-            return $this->config;
+        public function getSettings () {
+            return $this->settings;
         }
 
         /**
@@ -62,8 +65,8 @@
          *
          * @return TranslatorAPI
          */
-        private function setConfig (TranslatorSettings $config) {
-            $this->config = $config;
+        private function setSettings (TranslatorSettings $config) {
+            $this->settings = $config;
 
             return $this;
         }
@@ -109,8 +112,8 @@
          */
         private function getLanguageByContext () {
             // User has forced a Language
-            if ($this->getConfig()->getLanguage()) {
-                return $this->getConfig()->getLanguage();
+            if ($this->getSettings()->getLanguage()) {
+                return $this->getSettings()->getLanguage();
             }
 
             // User has own Connector
@@ -160,14 +163,14 @@
         /**
          * @return string
          */
-        public function getLanguage() {
-            return $this->getConfig()->getLanguage();
+        public function getLanguage () {
+            return $this->getSettings()->getLanguage();
         }
 
         /**
          * @return string
          */
-        public function getFallbackLanguage() {
-            return $this->getConfig()->getFallbackLanguage();
+        public function getFallbackLanguage () {
+            return $this->getSettings()->getFallbackLanguage();
         }
     }
