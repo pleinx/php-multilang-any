@@ -1,5 +1,6 @@
 [![Latest Stable Version](https://poser.pugx.org/pleinx/php-multilang-any/v/stable)](https://packagist.org/packages/pleinx/php-multilang-any)
 [![Total Downloads](https://poser.pugx.org/pleinx/php-multilang-any/downloads)](https://packagist.org/packages/pleinx/php-multilang-any)
+![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg)
 [![License](https://poser.pugx.org/pleinx/php-multilang-any/license)](https://packagist.org/packages/pleinx/php-multilang-any)
 
 ##### fyi: Currently not complete documented :-) Working on it...
