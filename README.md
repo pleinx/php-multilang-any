@@ -1,5 +1,6 @@
 [![Latest Stable Version](https://poser.pugx.org/pleinx/php-multilang-any/v/stable)](https://packagist.org/packages/pleinx/php-multilang-any)
 [![Total Downloads](https://poser.pugx.org/pleinx/php-multilang-any/downloads)](https://packagist.org/packages/pleinx/php-multilang-any)
+![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg)
 [![License](https://poser.pugx.org/pleinx/php-multilang-any/license)](https://packagist.org/packages/pleinx/php-multilang-any)
 
 ##### fyi: Currently not complete documented :-) Working on it...
@@ -42,13 +43,13 @@ By default the `TranslatorAPI` load the Translations in `./languageFiles/`.
 ## Customize
 
 ```ini
-$translatorConfig = (new TranslatorSettings())
+$settings = (new TranslatorSettings())
     ->setIsProduction(false)
     ->setLanguage('de')
     ->setFallbackLanguage('en')
     ->setLanguageFilesPath(__DIR__ . '/lang');
 
-new TranslatorAPI($translatorConfig);
+new TranslatorAPI($settings);
 ```
 
 **Notice:** Or just change the Default Settings, see [here](https://github.com/pleinx/php-multilang-any/wiki).
