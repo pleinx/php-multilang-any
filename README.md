@@ -42,13 +42,13 @@ By default the `TranslatorAPI` load the Translations in `./languageFiles/`.
 ## Customize
 
 ```ini
-$translatorConfig = (new TranslatorSettings())
+$settings = (new TranslatorSettings())
     ->setIsProduction(false)
     ->setLanguage('de')
     ->setFallbackLanguage('en')
     ->setLanguageFilesPath(__DIR__ . '/lang');
 
-new TranslatorAPI($translatorConfig);
+new TranslatorAPI($settings);
 ```
 
 **Notice:** Or just change the Default Settings, see [here](https://github.com/pleinx/php-multilang-any/wiki).
