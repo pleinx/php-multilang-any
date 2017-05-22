@@ -19,10 +19,6 @@
          */
         private $settings;
         /**
-         * @var AbstractConnector
-         */
-        private $connector;
-        /**
          * @var MessageResolver
          */
         private $messageResolver;
@@ -31,20 +27,13 @@
          * Translator constructor.
          *
          * @param TranslatorSettings|null $settings
-         * @param AbstractConnector|null $connector
          */
-        public function __construct (TranslatorSettings $settings = null, AbstractConnector $connector = null) {
+        public function __construct (TranslatorSettings $settings = null) {
             // Basic Initialize
             $this->setSettings(($settings) ?: new TranslatorSettings());
 
             // Find the current Language
             $this->getSettings()->setLanguage($this->getLanguageByContext());
-
-            // Set User Connector
-            if ($connector instanceof AbstractConnector) {
-                $this->setConnector($connector);
-                $this->getConnector()->addSettings($settings);
-            }
 
             // Add the MessageResolver
             $this->setMessageResolver(new MessageResolver($this->getSettings(), new ResourceResolver($this->getSettings())));
@@ -71,23 +60,6 @@
             return $this;
         }
 
-        /**
-         * @return AbstractConnector
-         */
-        public function getConnector () {
-            return $this->connector;
-        }
-
-        /**
-         * @param AbstractConnector|null $connector
-         *
-         * @return $this
-         */
-        private function setConnector (AbstractConnector $connector = null) {
-            $this->connector = $connector;
-
-            return $this;
-        }
 
         /**
          * @return MessageResolver
@@ -114,11 +86,6 @@
             // User has forced a Language
             if ($this->getSettings()->getLanguage()) {
                 return $this->getSettings()->getLanguage();
-            }
-
-            // User has own Connector
-            if ($this->getConnector() && $this->getConnector()->getLanguage()) {
-                return $this->getConnector()->getLanguage();
             }
 
             // General Priority if no Language isset
