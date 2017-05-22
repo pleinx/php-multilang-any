@@ -10,11 +10,10 @@ An PHP-library to handle translations (i18n) in your Project.
 
 #### Basic Features
 
-* [Production Modus](https://github.com/pleinx/php-multilang-any/wiki)
+* [Production/Debug Modus](https://github.com/pleinx/php-multilang-any/wiki)
 * [JSON-Files](https://github.com/pleinx/php-multilang-any/wiki) as Language-Resource
 * Efficient loading of [Language-Packages](https://github.com/pleinx/php-multilang-any/wiki)
 * [Automatic detection](https://github.com/pleinx/php-multilang-any/wiki) of Language (optional)
-* Build a custom [Connector](https://github.com/pleinx/php-multilang-any/wiki) for your current Project
 
 #### Translator Features
 
@@ -36,18 +35,23 @@ Translate::__e('Foo', ['Bar']);
 // Output "Foo is nicer than Bar"
 ```
 
-## Configure
+By default the `TranslatorAPI` load the Translations in `./languageFiles/`.
+
+**Notice:** You find all these default parameters [here](https://github.com/pleinx/php-multilang-any/wiki).
+
+## Customize
 
 ```ini
 $translatorConfig = (new TranslatorSettings())
-    ->setIsProduction(true)
-    ->setLanguage('en')
-    ->setFallbackLanguage('fr')
-    ->setLanguageFilesPath(__DIR__ . '/lang')
-    ->addData('customVar', 'customValue');
+    ->setIsProduction(false)
+    ->setLanguage('de')
+    ->setFallbackLanguage('en')
+    ->setLanguageFilesPath(__DIR__ . '/lang');
 
 new TranslatorAPI($translatorConfig);
 ```
+
+**Notice:** Or just change the Default Settings, see [here](https://github.com/pleinx/php-multilang-any/wiki).
 
 #### Language Resource Example (JSON) 
 ```ini
