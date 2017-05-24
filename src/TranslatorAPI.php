@@ -1,7 +1,8 @@
 <?php
 
-
     namespace MultilangAny;
+
+    session_start();
 
     use MultilangAny\Settings AS TranslatorSettings;
 
