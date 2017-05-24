@@ -7,7 +7,7 @@
 
 #### Description
 
-An PHP-library to handle translations (i18n) in your Project.
+Handles easy your translations for your multi language PHP Project.  
 
 #### Basic Features
 

@@ -1,12 +1,15 @@
 {
   "name": "pleinx/php-multilang-any",
   "type": "library",
-  "description": "An PHP-library to handle translations (i18n) in your Project.",
+  "description": "Handles easy your translations for your multi language PHP Project.",
   "keywords": [
     "php",
     "i18n",
     "translation",
     "translator",
+    "multilanguage",
+    "multilingual",
+    "multilang",
     "api",
     "translator-tool",
     "slim-framework",

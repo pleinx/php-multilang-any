@@ -6,7 +6,7 @@
      */
 
     // ========================= Initialize the Translator =========================
-    use MultilangAny\Settings AS TranslatorConfig;
+    use MultilangAny\Settings AS TranslatorSettings;
     use MultilangAny\TranslatorAPI;
 
     // Give a custom alias, what you want
@@ -15,21 +15,19 @@
 
     require '../vendor/autoload.php';
 
-    $translatorConfig = (new TranslatorConfig())
+    $translatorSettings = (new TranslatorSettings())
         ->setIsProduction(false)
         ->setLanguageFilesPath(__DIR__ . '/lang');
 
-    $translator = new TranslatorAPI($translatorConfig);
+    $translator = new TranslatorAPI($translatorSettings);
 
     // ========================= Usage via Dependendcy Injection =========================
     echo $translator->translate('pkg_general.SayHelloTo', 'Tim');
     // Output in German: "Hallo Tim!" and in english: "Hello Tim"
 
-
     // ========================= Usage via Static Class =========================
     TranslateMe::__e('pkg_general.SayHelloTo', 'Peter');
     // Output in German: "Hallo Peter!" and in english: "Hello Peter"
-
 
     // ========================= Usage via known helper function =========================
     function __ ($messageKey, $arguments = []) {
@@ -47,7 +45,6 @@
     // Direct echo
     __e('pkg_general.SayHelloTo', 'Sandra');
     // Output in German: "Hallo Sandra!" and in english: "Hello Sandra"
-
 
     // ========================= Usage with multiply arguments =========================
     TranslateMe::__e('pkg_search.SearchedFor', ['RC Car', 'Toys']);
