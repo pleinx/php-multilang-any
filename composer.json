@@ -1,5 +1,6 @@
 {
   "name": "pleinx/php-multilang-any",
+  "version": "1.0.0",
   "type": "library",
   "description": "Handles easy your translations for your multi language PHP Project.",
   "keywords": [
