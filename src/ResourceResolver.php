@@ -44,13 +44,14 @@
          * @param $packageName
          *
          * @return bool
+         * @throws \Exception
          */
         public function loadLanguagePackByName ($packageName) {
             if (isset($this->resources[$packageName])) {
                 return true;
             }
 
-            $beforeResourcesCtn = count($this->getLoadedResources());
+            $beforeResourcesCtn = count($this->getLoadedResources() ?? []);
 
             foreach ($this->getLanguages() AS $language) {
                 $resourceFile = $this->getLanguagePackageByParams($packageName, $language);
