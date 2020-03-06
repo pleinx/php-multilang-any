@@ -98,8 +98,13 @@
                 return $_SESSION[Container::SESSION_LANGUAGE_PARAMTER];
             }
 
-            // Current Browser Language
-            return $this->getBrowserLanguage();
+            if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+                // Current Browser Language
+                return $this->getBrowserLanguage();
+            }
+
+            // no language found - return the fallback language
+            return $this->getSettings()->getFallbackLanguage();
         }
 
         /**
