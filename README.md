@@ -65,5 +65,5 @@ new TranslatorAPI($settings);
 ```
 
 #### Requirements
-* PHP 5.6 and above
+* PHP 7.4 and above (tested with php8)
 
